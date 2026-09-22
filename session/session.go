@@ -24,7 +24,7 @@ type Session struct {
 	DeviceID     string    `json:"device_id,omitempty"`
 	ClientID     string    `json:"client_id,omitempty"`
 	Scope        string    `json:"scope,omitempty"`
-	ExpiresAt    time.Time `json:"expires_at,omitempty"`
+	ExpiresAt    time.Time `json:"expires_at,omitzero"`
 }
 
 // FromToken builds a session around an externally obtained access token,
