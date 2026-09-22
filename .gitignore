@@ -1,0 +1,14 @@
+# binaries and coverage
+/bin/
+*.test
+*.out
+coverage.*
+
+# session files produced by examples
+*.session.json
+session.json
+
+# editors / OS
+.idea/
+.vscode/
+.DS_Store
