@@ -279,8 +279,8 @@ func (c *Client) run(ctx context.Context, done chan struct{}) {
 		if rerr == nil {
 			c.log.Info("token refreshed after long poll auth failure, reconnecting")
 			c.connMu.Lock()
-			if c.cancel != nil || c.connected {
-				// A concurrent Connect already started a loop.
+			if c.done != done {
+				// Disconnect or a concurrent Connect took over the slot.
 				c.connMu.Unlock()
 				return
 			}
